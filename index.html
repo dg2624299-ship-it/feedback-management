@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login - Feedback Management System</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<main><div class="card form login">
+  <h2>Feedback Management System</h2>
+  <div class="tabs"><button type="button" class="tab active" data-role="user">User</button><button type="button" class="tab" data-role="admin">Admin</button></div>
+  <form id="authForm">
+    <div id="nameRow"><label for="name">Full name</label><input id="name"></div>
+    <label for="email">Email</label><input id="email" type="email">
+    <label for="password">Password</label><input id="password" type="password">
+    <div id="planRow"><label for="plan">Your plan</label><select id="plan"><option>Free</option><option>Premium</option><option>Enterprise</option></select></div>
+    <p><button type="submit" id="submitBtn">Log in</button></p>
+  </form>
+  <p><a href="#" id="toggle"></a></p>
+  <div id="msg" role="alert"></div>
+  <p class="empty">Demo admin: admin@fms.com / admin123<br>Demo user: aarav@example.com / user123</p>
+</div></main>
+<script src="js/analysis.js"></script><script src="js/workflows.js"></script><script src="js/storage.js"></script><script src="js/auth.js"></script><script src="js/login.js"></script>
+</body></html>

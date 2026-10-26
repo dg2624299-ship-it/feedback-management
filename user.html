@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My feedback</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<header><h1>Feedback Management System</h1><div class="navr"><span id="who"></span><button class="ghost" id="logout">Log out</button></div></header>
+<main>
+  <h2>Forms for you</h2><div class="cards" id="forms"></div>
+  <section class="card"><h2>My feedback</h2><div class="tablewrap"><table><thead><tr><th>Form</th><th>Score</th><th>My comment</th><th>Status</th><th>Reply from team</th></tr></thead><tbody id="mine"></tbody></table></div></section>
+</main>
+<dialog id="dlg"><h2 id="dTitle"></h2><p id="dQuestion"></p>
+  <label for="channel">How are you sending this?</label>
+  <select id="channel"><option>Website Pop-up</option><option>Email</option><option>SMS</option><option>WhatsApp</option><option>In-App Survey</option><option>QR Code</option><option>Kiosk</option><option>Web Widget</option></select>
+  <label for="score" id="scoreLabel"></label><select id="score"></select>
+  <label for="comment">Your comment</label><textarea id="comment" placeholder="What went well or wrong?"></textarea>
+  <div id="dMsg" role="alert" class="empty"></div>
+  <p><button id="submitFb">Send feedback</button> <button class="ghost" id="cancelFb">Cancel</button></p></dialog>
+<script src="js/analysis.js"></script><script src="js/workflows.js"></script><script src="js/storage.js"></script><script src="js/auth.js"></script><script src="js/user.js"></script>
+</body></html>

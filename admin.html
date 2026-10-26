@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin dashboard</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<header><h1>Feedback Management System - Admin</h1><div class="navr"><span id="who"></span><button class="ghost" id="logout">Log out</button></div></header>
+<main>
+  <section class="grid kpis">
+    <div class="card kpi"><small>Net Promoter Score</small><div class="num" id="nps">0</div></div>
+    <div class="card kpi"><small>CSAT (satisfied %)</small><div class="num" id="csat">0</div></div>
+    <div class="card kpi"><small>CES (avg effort, 1-7)</small><div class="num" id="ces">0</div></div>
+    <div class="card kpi"><small>Total responses</small><div class="num" id="total">0</div></div>
+  </section>
+  <section class="grid three">
+    <div class="card"><h2>Create a feedback form</h2>
+      <form id="createForm">
+        <label for="fTitle">Form title</label><input id="fTitle" style="width:100%" placeholder="e.g. Delivery Experience">
+        <label for="fTopic">Topic</label><input id="fTopic" style="width:100%" placeholder="e.g. Delivery">
+        <div class="row2"><div><label for="fType">Survey type</label><select id="fType" style="width:100%"><option value="NPS">NPS</option><option value="CSAT">CSAT</option><option value="CES">CES</option></select></div>
+        <div><label for="fTarget">Send to</label><select id="fTarget" style="width:100%"><option>All</option><option>Free</option><option>Premium</option><option>Enterprise</option></select></div></div>
+        <label for="fQuestion">Question (optional)</label><input id="fQuestion" style="width:100%" placeholder="Leave empty to use the standard question">
+        <p><button type="submit">Create form</button></p><div id="createMsg" class="empty" role="status"></div>
+      </form></div>
+    <div class="card"><h2>Open alerts</h2><div id="alerts"></div></div>
+    <div class="card"><h2>By sentiment</h2><div id="bySentiment"></div><h2>By theme</h2><div id="byCategory"></div></div>
+  </section>
+  <section class="card" style="margin-bottom:16px"><h2>My forms</h2><div class="tablewrap"><table><thead><tr><th>Form</th><th>Type</th><th>Sent to</th><th>Responses</th><th></th></tr></thead><tbody id="formRows"></tbody></table></div></section>
+  <section class="card"><h2>Who gave feedback</h2>
+    <div class="filters"><select id="fForm"></select>
+      <select id="fSent"><option value="">All sentiments</option><option>Positive</option><option>Neutral</option><option>Negative</option></select>
+      <select id="fStatus"><option value="">All statuses</option><option>New</option><option>In Progress</option><option>Resolved</option></select>
+      <button class="ghost" id="resetData">Reset demo data</button></div>
+    <div class="tablewrap"><table><thead><tr><th>Date</th><th>Form</th><th>User</th><th>Channel</th><th>Score</th><th>Comment</th><th>AI analysis</th><th>Team</th><th>Status</th><th></th></tr></thead><tbody id="rows"></tbody></table></div>
+  </section>
+</main>
+<dialog id="dlg"><h2>Reply to user</h2><div id="replyInfo"></div>
+  <label for="replyText">Your reply</label><textarea id="replyText"></textarea>
+  <label for="replyStatus">Status</label><select id="replyStatus"><option>New</option><option>In Progress</option><option>Resolved</option></select>
+  <p><button id="sendReply">Save reply</button> <button class="ghost" id="closeDlg">Cancel</button></p></dialog>
+<script src="js/analysis.js"></script><script src="js/workflows.js"></script><script src="js/storage.js"></script><script src="js/auth.js"></script><script src="js/admin.js"></script>
+</body></html>
